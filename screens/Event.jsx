@@ -1,12 +1,12 @@
-import { View, Text, Image, TextInput, Pressable, ScrollView } from 'react-native'
-import React, { useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
+import React, { useEffect } from 'react'
+import { Image, Pressable, ScrollView, Text, TextInput, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import logo from "../assets/logo.png"
-import user from "../assets/user.png"
-import dot from "../assets/dot.png"
 import camera from "../assets/camera.png"
 import cameraVideo from "../assets/camera_video.png"
+import dot from "../assets/dot.png"
+import logo from "../assets/logo.png"
+import user from "../assets/user.png"
 const Event = () => {
   const navigation = useNavigation()
   useEffect(() => {
