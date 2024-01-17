@@ -1,5 +1,6 @@
 # WiserStack
-
+You can install this application on your mobile. 
+[https://expo.dev/artifacts/eas/cviTgzVZnMK9MpQZEN1h2c.apk](https://expo.dev/artifacts/eas/cviTgzVZnMK9MpQZEN1h2c.apk)
 ## Screenshots
 
 ![Screenshot1](./assets/WhatsApp%20Image%202024-01-16%20at%2013.40.47.jpeg)
