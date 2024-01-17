@@ -4,11 +4,13 @@ import rectangle from "./rectangle.png"
 import dot from "./dot.png"
 import user from "./user.png"
 import cameraVideo from "./camera_video.png"
+import setting from "./setting.png"
 export {
   logo,
   camera,
   rectangle,
   dot,
   user,
-  cameraVideo
+  cameraVideo,
+  setting
 }

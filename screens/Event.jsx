@@ -2,8 +2,8 @@ import { useNavigation } from '@react-navigation/native'
 import React, { useEffect } from 'react'
 import { Image, Pressable, ScrollView, Text, TextInput, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { camera, cameraVideo, dot, logo, user } from '../assets'
-
+import { cameraVideo, dot, logo, setting, user } from '../assets'
+import { camerSetupDeta } from '../config'
 const Event = () => {
   const navigation = useNavigation()
   useEffect(() => {
@@ -12,26 +12,6 @@ const Event = () => {
     })
   }, [])
 
-  const cameras = [
-    {
-      image: camera,
-      name: 'Camera 1',
-      location: 'Hall 1',
-      isCamera: true
-    },
-    {
-      image: camera,
-      name: 'Camera 1',
-      location: 'Hall 1',
-      isCamera: true
-    },
-    {
-      image: camera,
-      name: 'Camera 1',
-      location: 'Hall 1',
-      isCamera: false
-    },
-  ]
   return (
     <SafeAreaView className="max-w-7xl mx-auto w-full">
       {/* Header  */}
@@ -56,8 +36,8 @@ const Event = () => {
       <View className="p-2 mt-6">
         {/* Manage event  */}
         <View className="px-3 py-4 rounded-lg border border-gray-400">
-          <Text className="text-xs mb-4">WED, 25 JAN 2024</Text>
-          <View className="lg:flex-row lg:items-stretch lg:justify-between  gap-3">
+          <Text className="text-xs mb-4 lg:mb-0">WED, 25 JAN 2024</Text>
+          <View className="lg:flex-row lg:items-baseline lg:justify-between  gap-3">
             <View>
               <Text className="text-lg font-semibold">Saurabh's Birthday Party</Text>
               <Text className="text-xs flex-row items-center" numberOfLines={1}>Happy Dreams Hotel <Image source={dot} /> Hall <Image source={dot} /> 5 New Delhi</Text>
@@ -66,7 +46,7 @@ const Event = () => {
               <Text className="text-sm font-semibold">250 attendees</Text>
               <Text className="text-xs text-gray-500">Min. commitment</Text>
             </View>
-            <Pressable className="max-w-sm">
+            <Pressable className="max-w-sm shadow-lg">
               <View className="bg-[#090E82] rounded-full py-3 px-6 mt-5">
                 <Text className="text-white text-center">Start Event</Text>
               </View>
@@ -77,20 +57,25 @@ const Event = () => {
 
       {/* Camera Setup  */}
       <View className="p-2 mt-3 ">
-        <Text className="font-bold text-lg">Camera Setup</Text>
-        <Text className="text-gray-600 mb-3">Finalise current event’s camera setup & get started</Text>
+        <View className="flex-row justify-between items-center">
+          <View>
+            <Text className="font-bold text-lg">Camera Setup</Text>
+            <Text className="text-gray-600 mb-3">Finalise current event’s camera setup & get started</Text>
+          </View>
+          <Image source={setting} className="w-6 h-6" />
+        </View>
         <ScrollView horizontal className="w-full py-2 gap-4">
           {
-            cameras.map(({ image, location, name, isCamera }, index) => <View key={index} className="">
+            camerSetupDeta.map(({ image, location, name, isCamera }, index) => <View key={index} className="">
               {
                 isCamera ?
                   <>
-                    <Image source={image} className="rounded-xl border" />
+                    <Image source={image} className="rounded-xl border h-64 w-48" />
                     <Text className="text-center mt-4 text-lg">{name}</Text>
                     <Text className="text-center text-[#090E82]">{location}</Text>
                   </> :
-                  <View className="w-44 rounded-xl h-64 justify-center items-center border border-gray-300">
-                    <Image source={cameraVideo} />
+                  <View className="rounded-xl h-64 w-48 justify-center items-center border border-gray-300">
+                    <Image source={cameraVideo} className="w-12 h-12" />
                     <Text className="text-center mt-4 text-lg">No Camera</Text>
                   </View>
               }

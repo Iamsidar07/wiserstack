@@ -4,10 +4,10 @@ import logo from "../assets/logo.png"
 import rectangle from "../assets/rectangle.png"
 const Login = () => {
   return (
-    <View className="flex-1 w-full max-w-7xl mx-auto">
+    <View className="flex-1 lg:flex-row w-full max-w-7xl mx-auto">
 
-      <Image source={rectangle} className="hidden lg:flex w-full max-w-md" />
-      <View className="items-center p-5 ">
+      <Image source={rectangle} className="hidden lg:flex h-full w-full max-w-2xl" />
+      <View className="items-center p-5  lg:flex-1 ">
         <View className="flex-row items-center gap-x-1 mt-6">
           <View className="w-12 h-6">
             <Image source={logo} resizeMode='contain' className="w-full h-full" />
